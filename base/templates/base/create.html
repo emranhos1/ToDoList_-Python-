@@ -1,0 +1,15 @@
+{% extends 'base/login/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <h2>Create Task</h2>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{form | crispy}}
+                <input type="submit" value="Submit" class="btn btn-info fadeIn fourth"/>
+            </form>
+            <a href="{% url 'tasks' %}" class="underlineHover">Back To List</a>
+        </div>
+    </div>
+{% endblock content %}

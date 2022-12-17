@@ -1,0 +1,14 @@
+{% extends 'base/login/main.html' %}
+{% block content %}
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1>Login</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="LOGIN" class="btn btn-primary fadeIn fourth"/>
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}" class="underlineHover">Register</a></p>
+    </div>
+</div>
+{% endblock content %}
